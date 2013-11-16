@@ -1,0 +1,46 @@
+{
+  "name": "grunt-ipsum",
+  "description": "Generate fake data.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/timrwood/grunt-ipsum",
+  "author": {
+    "name": "Tim Wood",
+    "email": "washwithcare@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timwrood/grunt-ipsum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timrwood/grunt-ipsum/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/timrwood/grunt-ipsum/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "dotty": "0.0.2",
+    "Faker": "~0.5.11"
+  }
+}
