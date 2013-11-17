@@ -14,10 +14,8 @@ npm install grunt-ipsum --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-contrib-less');
+grunt.loadNpmTasks('grunt-ipsum');
 ```
-
-*This plugin was designed to work with Grunt 0.4.x. If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can't please use [v0.3.2](https://github.com/gruntjs/grunt-contrib-less/tree/grunt-0.3-stable).*
 
 ## Ipsum task
 _Run this task with the `grunt ipsum` command._
@@ -29,6 +27,13 @@ Task targets, files and options may be specified according to the grunt [Configu
 #### dest `String`
 
 Path to save output file.
+
+
+```js
+grunt.config('ipsum.mytask', {
+	dest : 'path/to/file.json'
+});
+```
 
 #### template `Object|Array`
 
@@ -163,3 +168,174 @@ The values available in the template context are based on [Faker.js](https://git
 		<td>Faker.Address.longitude</td>
 	</tr>
 </table>
+
+
+#### repeat `Number|Array`
+
+The number of times to repeat the template.
+
+```
+grunt.config('ipsum.mytask', {
+	template : {
+		name : '{%= ipsum.name %}'
+	},
+	repeat : 5
+});
+// Outputs
+[
+	{
+		"name": "Lori Hegmann"
+	},
+	{
+		"name": "Vernie Deckow"
+	},
+	{
+		"name": "Karlee Schowalter"
+	},
+	{
+		"name": "Mya Hahn"
+	},
+	{
+		"name": "Colin Strosin"
+	}
+]
+```
+
+If the value is an array, the template will be repeated a random number of times between the two values.
+
+```
+grunt.config('ipsum.mytask', {
+	template : {
+		name : '{%= ipsum.name %}'
+	},
+	repeat : [1, 20]
+});
+// Outputs 1 to 20 results
+[
+	{
+		"name": "Lori Hegmann"
+	},
+	// ...
+	{
+		"name": "Colin Strosin"
+	}
+]
+```
+
+
+
+#### repetitions `Object`
+
+The number of times to repeat nested items.
+
+```
+grunt.config('ipsum.mytask', {
+	template : {
+		name : '{%= ipsum.name %}',
+		children : {
+			name : '{%= ipsum.name %}'
+		}
+	},
+	repetitions : {
+		'children' : 3
+	}
+});
+// Outputs
+{
+	"name": "Rosanna Predovic",
+	"children": [
+		{
+			"name": "Mr. Karlie Jast"
+		},
+		{
+			"name": "Sabina Hoppe"
+		},
+		{
+			"name": "Jordon Friesen"
+		}
+	]
+}
+```
+
+This also works for deep nested paths.
+
+```
+grunt.config('ipsum.mytask', {
+	template : {
+		name : '{%= ipsum.name %}',
+		children : {
+			child_name : '{%= ipsum.name %}',
+			friends : {
+				friend_name : '{%= ipsum.name %}'
+			}
+		}
+	},
+	repetitions : {
+		'children' : 2,
+		'children.friends' : 3
+	}
+});
+// Outputs
+{
+	"name": "Johnnie Kutch",
+	"children": [
+		{
+			"child_name": "Ms. Charlene Jacobi",
+			"friends": [
+				{
+					"friend_name": "Martin Hilpert"
+				},
+				{
+					"friend_name": "Price Murray"
+				},
+				{
+					"friend_name": "Jermain Mosciski"
+				}
+			]
+		},
+		{
+			"child_name": "Barrett Connelly",
+			"friends": [
+				{
+					"friend_name": "Mrs. Ethel Cremin"
+				},
+				{
+					"friend_name": "Weldon Muller"
+				},
+				{
+					"friend_name": "Aurelia Parisian"
+				}
+			]
+		}
+	]
+```
+
+As with the `repeat` option, if the value is an array, a random number will be chosen between the two values.
+
+```
+grunt.config('ipsum.mytask', {
+	template : {
+		name : '{%= ipsum.name %}',
+		children : {
+			name : '{%= ipsum.name %}'
+		}
+	},
+	repetitions : {
+		'children' : [1, 10]
+	}
+});
+// Outputs
+{
+	"name": "Rosanna Predovic",
+	"children": [ // 1 to 10 children
+		{
+			"name": "Mr. Karlie Jast"
+		},
+		// ...
+		{
+			"name": "Jordon Friesen"
+		}
+	]
+}
+```
+
