@@ -90,14 +90,14 @@ exports.replacer = {
 		var object = {
 			name : 'Some Name',
 			slug : '{%= _.slugify(self.name) %}',
-			grunt : '{%= grunt.template.date(847602000000, "yyyy-mm-dd") %}'
+			grunt : '{%= grunt.template.date(847602000000, "yyyy-mm") %}'
 		};
 
 		var actual = replacer(object, {});
 
 		test.equal(actual.name, 'Some Name', 'Should not replace string literals.');
 		test.equal(actual.slug, 'some-name', 'Underscore.string helpers should be available in the template context.');
-		test.equal(actual.grunt, '1996-11-09', 'Grunt helpers should be available in the template context.');
+		test.equal(actual.grunt, '1996-11', 'Grunt helpers should be available in the template context.');
 
 		test.done();
 	},
