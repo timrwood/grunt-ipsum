@@ -133,4 +133,72 @@ exports.repeater = {
 
 		test.done();
 	},
+	randomized_repetitions : function (test) {
+		var object = {
+			a : 'a'
+		};
+
+		var repetitions = {
+			'a' : [2, 6]
+		};
+
+		var actual = repeater(object, [20, 30], repetitions);
+
+		test.ok(actual.length > 19, 'Should be at least the minimum number of repetitions.');
+		test.ok(actual.length < 31, 'Should be at less than the maximim number of repetitions.');
+
+		for (var i = 0; i < actual.length; i++) {
+			test.ok(actual[i].a.length > 1, 'Should be at least the minimum number of repetitions. (' + actual[i].a.length + ' > 1)');
+			test.ok(actual[i].a.length < 7, 'Should be at less than the maximim number of repetitions. (' + actual[i].a.length + ' < 7)');
+		}
+
+		test.done();
+	},
+	randomized_sub_repetitions : function (test) {
+		var object = {
+			a : 'a'
+		};
+
+		var repetitions = {
+			'a' : [1, 6]
+		};
+
+		var randomCount = 0;
+		var randomMax = 5;
+		var oldRandom = Math.random;
+		Math.random = function () {
+			var output = randomCount / randomMax;
+			randomCount++;
+			return output;
+		};
+
+		var actual = repeater(object, 5, repetitions);
+
+		for (var i = 0; i < 5; i++) {
+			test.equal(actual[i].a.length, i + 1, 'Each child should be able to have different lengths.');
+		}
+
+		Math.random = oldRandom;
+
+		test.done();
+	},
+	from_grunt_task_randomized : function (test) {
+		var actual = grunt.file.readJSON('test/actual/repeater_random.json');
+
+		test.ok(actual.length > 4, 'Should be at least the minimum number of repetitions.');
+		test.ok(actual.length < 11, 'Should be at less than the maximim number of repetitions.');
+
+		var length;
+		for (var i = 0; i < actual.length; i++) {
+			length = actual[i].name.length;
+			test.ok(length > 0, 'Should be at least the minimum number of repetitions. (' + length + ' > 0)');
+			test.ok(length < 6, 'Should be at less than the maximim number of repetitions. (' + length + ' < 6)');
+
+			length = actual[i].city.length;
+			test.ok(length > 0, 'Should be at least the minimum number of repetitions. (' + length + ' > 0)');
+			test.ok(length < 6, 'Should be at less than the maximim number of repetitions. (' + length + ' < 6)');
+		}
+
+		test.done();
+	},
 };
