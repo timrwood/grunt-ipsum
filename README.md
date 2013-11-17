@@ -174,7 +174,7 @@ The values available in the template context are based on [Faker.js](https://git
 
 The number of times to repeat the template.
 
-```
+```js
 grunt.config('ipsum.mytask', {
 	template : {
 		name : '{%= ipsum.name %}'
@@ -203,7 +203,7 @@ grunt.config('ipsum.mytask', {
 
 If the value is an array, the template will be repeated a random number of times between the two values.
 
-```
+```js
 grunt.config('ipsum.mytask', {
 	template : {
 		name : '{%= ipsum.name %}'
@@ -228,7 +228,7 @@ grunt.config('ipsum.mytask', {
 
 The number of times to repeat nested items.
 
-```
+```js
 grunt.config('ipsum.mytask', {
 	template : {
 		name : '{%= ipsum.name %}',
@@ -259,7 +259,7 @@ grunt.config('ipsum.mytask', {
 
 This also works for deep nested paths.
 
-```
+```js
 grunt.config('ipsum.mytask', {
 	template : {
 		name : '{%= ipsum.name %}',
@@ -312,7 +312,7 @@ grunt.config('ipsum.mytask', {
 
 As with the `repeat` option, if the value is an array, a random number will be chosen between the two values.
 
-```
+```js
 grunt.config('ipsum.mytask', {
 	template : {
 		name : '{%= ipsum.name %}',
