@@ -1,5 +1,6 @@
 var replacer = require('../../lib/replacer'),
-	getter = require('../../lib/getter');
+	getter = require('../../lib/getter'),
+	grunt = require('grunt');
 
 exports.base = {
 	setUp: function (done) {
@@ -54,6 +55,34 @@ exports.base = {
 		test.equal(actual.a, 'alpha', 'Should replace properties from dynamic getters.');
 		test.equal(actual.c, 'alpha', 'Should replace properties from dynamic getters as functions.');
 		test.equal(JSON.stringify(actual), '{"a":"alpha","c":"alpha"}', 'Should replace properties from dynamic getters.');
+
+		test.done();
+	},
+	replace_type : function (test) {
+		var array = replacer([], {});
+		var object = replacer({}, {});
+
+		test.equal(grunt.util.kindOf(array), 'array', 'Should return an array if an array was passed in.');
+		test.equal(grunt.util.kindOf(object), 'object', 'Should return an object if an object was passed in.');
+
+		test.done();
+	},
+	replace_self : function (test) {
+		var object = {
+			a : '{%= b %}',
+			c : '{%= self.a %}',
+			d : 'delta {%= self.c %}'
+		};
+
+		var data = {
+			b : 'beta'
+		};
+
+		var actual = replacer(object, data);
+
+		test.equal(actual.a, 'beta', 'Should replace properties from dynamic getters.');
+		test.equal(actual.c, 'beta', 'Should replace self properties from previous results.');
+		test.equal(actual.d, 'delta beta', 'Should replace self properties from previous self properties.');
 
 		test.done();
 	},
