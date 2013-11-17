@@ -40,7 +40,6 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "dotty": "0.0.2",
     "Faker": "~0.5.11"
   }
 }
