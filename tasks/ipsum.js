@@ -9,14 +9,15 @@
 'use strict';
 
 var data = require('../lib/data'),
-	replacer = require('../lib/replacer');
+	replacer = require('../lib/replacer'),
+	repeater = require('../lib/repeater');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('ipsum', 'Generate fake data.', function () {
 		this.files.forEach(function (file) {
-			grunt.file.write(file.dest, JSON.stringify(replacer(file.template, {
-				ipsum : data
-			}), null, '\t'));
+			var repeated = repeater(file.template, file.repeat, file.repetitions);
+			var replaced = replacer(repeated, { ipsum : data });
+			grunt.file.write(file.dest, JSON.stringify(replaced, null, '\t'));
 		});
 	});
 };

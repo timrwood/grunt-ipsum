@@ -1,6 +1,6 @@
 var grunt = require('grunt');
 
-exports.base = {
+exports.faker = {
 	setUp: function (done) {
 		done();
 	},

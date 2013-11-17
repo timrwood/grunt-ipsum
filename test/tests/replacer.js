@@ -2,7 +2,7 @@ var replacer = require('../../lib/replacer'),
 	getter = require('../../lib/getter'),
 	grunt = require('grunt');
 
-exports.base = {
+exports.replacer = {
 	setUp: function (done) {
 		done();
 	},

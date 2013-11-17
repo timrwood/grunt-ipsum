@@ -1,6 +1,6 @@
 var getter = require('../../lib/getter');
 
-exports.base = {
+exports.getter = {
 	setUp: function (done) {
 		done();
 	},
