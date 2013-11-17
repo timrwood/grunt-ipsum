@@ -27,6 +27,17 @@ exports.faker = {
 		test.ok(actual.usState, 'Should export a value from Faker.js');
 		test.ok(actual.latitude, 'Should export a value from Faker.js');
 		test.ok(actual.longitude, 'Should export a value from Faker.js');
+		test.ok(actual.phoneNumber, 'Should export a value from Faker.js');
+		test.ok(actual.phoneNumberFormat, 'Should export a value from Faker.js');
+		test.ok(actual.email, 'Should export a value from Faker.js');
+		test.ok(actual.userName, 'Should export a value from Faker.js');
+		test.ok(actual.domainName, 'Should export a value from Faker.js');
+		test.ok(actual.domainWord, 'Should export a value from Faker.js');
+		test.ok(actual.ip, 'Should export a value from Faker.js');
+		test.ok(actual.companyName, 'Should export a value from Faker.js');
+		test.ok(actual.companySuffix, 'Should export a value from Faker.js');
+		test.ok(actual.catchPhrase, 'Should export a value from Faker.js');
+		test.ok(actual.bs, 'Should export a value from Faker.js');
 
 		test.done();
 	},

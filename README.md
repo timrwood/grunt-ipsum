@@ -167,6 +167,50 @@ The values available in the template context are based on [Faker.js](https://git
 		<td>ipsum.longitude</td>
 		<td>Faker.Address.longitude</td>
 	</tr>
+	<tr>
+		<td>ipsum.phoneNumber</td>
+		<td>Faker.PhoneNumber.phoneNumber</td>
+	</tr>
+	<tr>
+		<td>ipsum.phoneNumberFormat</td>
+		<td>Faker.PhoneNumber.phoneNumberFormat</td>
+	</tr>
+	<tr>
+		<td>ipsum.email</td>
+		<td>Faker.Internet.email</td>
+	</tr>
+	<tr>
+		<td>ipsum.userName</td>
+		<td>Faker.Internet.userName</td>
+	</tr>
+	<tr>
+		<td>ipsum.domainName</td>
+		<td>Faker.Internet.domainName</td>
+	</tr>
+	<tr>
+		<td>ipsum.domainWord</td>
+		<td>Faker.Internet.domainWord</td>
+	</tr>
+	<tr>
+		<td>ipsum.ip</td>
+		<td>Faker.Internet.ip</td>
+	</tr>
+	<tr>
+		<td>ipsum.companyName</td>
+		<td>Faker.Company.companyName</td>
+	</tr>
+	<tr>
+		<td>ipsum.companySuffix</td>
+		<td>Faker.Company.companySuffix</td>
+	</tr>
+	<tr>
+		<td>ipsum.catchPhrase</td>
+		<td>Faker.Company.catchPhrase</td>
+	</tr>
+	<tr>
+		<td>ipsum.bs</td>
+		<td>Faker.Company.bs</td>
+	</tr>
 </table>
 
 
