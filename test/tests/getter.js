@@ -48,4 +48,17 @@ exports.getter = {
 
 		test.done();
 	},
+	make_getter_with_defaults : function (test) {
+		var object = {};
+
+		getter(object, 'a', function (a, b) {
+			return a + b;
+		}, ['c', 'd']);
+
+		test.equal(object.a, 'cd', 'Should use default arguments.');
+		test.equal(object.a('a'), 'ad', 'Should be able to override a default.');
+		test.equal(object.a('a', 'b'), 'ab', 'Should be able to override all defaults.');
+
+		test.done();
+	},
 };
