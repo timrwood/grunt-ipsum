@@ -28,7 +28,6 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 Path to save output file.
 
-
 ```js
 grunt.config('ipsum.mytask', {
 	dest : 'path/to/file.json'
@@ -99,121 +98,6 @@ grunt.config('ipsum.mytask', {
 }
 ```
 
-The values available in the template context are based on [Faker.js](https://github.com/marak/Faker.js/).
-
-<table>
-	<tr>
-		<th>Ipsum property</th>
-		<th>Source</th>
-	</tr>
-	<tr>
-		<td>ipsum.name</td>
-		<td>Faker.Name.findName</td>
-	</tr>
-	<tr>
-		<td>ipsum.firstName</td>
-		<td>Faker.Name.firstName</td>
-	</tr>
-	<tr>
-		<td>ipsum.lastName</td>
-		<td>Faker.Name.lastName</td>
-	</tr>
-
-	<tr>
-		<td>ipsum.zipCode</td>
-		<td>Faker.Address.zipCode</td>
-	</tr>
-	<tr>
-		<td>ipsum.zipCodeFormat</td>
-		<td>Faker.Address.zipCodeFormat</td>
-	</tr>
-	<tr>
-		<td>ipsum.city</td>
-		<td>Faker.Address.city</td>
-	</tr>
-	<tr>
-		<td>ipsum.streetAddress</td>
-		<td>Faker.Address.streetAddress</td>
-	</tr>
-	<tr>
-		<td>ipsum.streetAddress</td>
-		<td>Faker.Address.streetAddress</td>
-	</tr>
-	<tr>
-		<td>ipsum.secondaryAddress</td>
-		<td>Faker.Address.secondaryAddress</td>
-	</tr>
-	<tr>
-		<td>ipsum.brState</td>
-		<td>Faker.Address.brState</td>
-	</tr>
-	<tr>
-		<td>ipsum.ukCounty</td>
-		<td>Faker.Address.ukCounty</td>
-	</tr>
-	<tr>
-		<td>ipsum.ukCountry</td>
-		<td>Faker.Address.ukCountry</td>
-	</tr>
-	<tr>
-		<td>ipsum.usState</td>
-		<td>Faker.Address.usState</td>
-	</tr>
-	<tr>
-		<td>ipsum.latitude</td>
-		<td>Faker.Address.latitude</td>
-	</tr>
-	<tr>
-		<td>ipsum.longitude</td>
-		<td>Faker.Address.longitude</td>
-	</tr>
-	<tr>
-		<td>ipsum.phoneNumber</td>
-		<td>Faker.PhoneNumber.phoneNumber</td>
-	</tr>
-	<tr>
-		<td>ipsum.phoneNumberFormat</td>
-		<td>Faker.PhoneNumber.phoneNumberFormat</td>
-	</tr>
-	<tr>
-		<td>ipsum.email</td>
-		<td>Faker.Internet.email</td>
-	</tr>
-	<tr>
-		<td>ipsum.userName</td>
-		<td>Faker.Internet.userName</td>
-	</tr>
-	<tr>
-		<td>ipsum.domainName</td>
-		<td>Faker.Internet.domainName</td>
-	</tr>
-	<tr>
-		<td>ipsum.domainWord</td>
-		<td>Faker.Internet.domainWord</td>
-	</tr>
-	<tr>
-		<td>ipsum.ip</td>
-		<td>Faker.Internet.ip</td>
-	</tr>
-	<tr>
-		<td>ipsum.companyName</td>
-		<td>Faker.Company.companyName</td>
-	</tr>
-	<tr>
-		<td>ipsum.companySuffix</td>
-		<td>Faker.Company.companySuffix</td>
-	</tr>
-	<tr>
-		<td>ipsum.catchPhrase</td>
-		<td>Faker.Company.catchPhrase</td>
-	</tr>
-	<tr>
-		<td>ipsum.bs</td>
-		<td>Faker.Company.bs</td>
-	</tr>
-</table>
-
-
 #### repeat `Number|Array`
 
 The number of times to repeat the template.
@@ -265,8 +149,6 @@ grunt.config('ipsum.mytask', {
 	}
 ]
 ```
-
-
 
 #### repetitions `Object`
 
@@ -383,3 +265,374 @@ grunt.config('ipsum.mytask', {
 }
 ```
 
+## Template keys and examples
+
+### Users
+
+<table>
+	<tr>
+		<th>Key</th>
+		<th>Examples</th>
+	</tr>
+	<tr>
+		<td>name</td>
+		<td>Maeve Homenick, Owen Mraz, Bernardo Grimes</td>
+	</tr>
+	<tr>
+		<td>firstName</td>
+		<td>Braxton, Susana, Marcelle</td>
+	</tr>
+	<tr>
+		<td>lastName</td>
+		<td>Kuphal, Hand, Effertz</td>
+	</tr>
+	<tr>
+		<td>phoneNumber</td>
+		<td>003-273-1853 x1157, 847.322.7960, 357.014.4721</td>
+	</tr>
+	<tr>
+		<td>phoneNumberFormat(0)</td>
+		<td>979-083-1591, 213-279-0050, 909-907-7814</td>
+	</tr>
+	<tr>
+		<td>phoneNumberFormat(1)</td>
+		<td>(012)512-0615, (946)971-1172, (572)007-5316</td>
+	</tr>
+	<tr>
+		<td>phoneNumberFormat(2)</td>
+		<td>1-976-102-1694, 1-961-173-9743, 1-247-057-0318</td>
+	</tr>
+	<tr>
+		<td>email</td>
+		<td>Carolyn@frederick.biz, Lukas@katarina.me, Reuben.Kuhlman@joesph.name</td>
+	</tr>
+	<tr>
+		<td>userName</td>
+		<td>Alek, Santina_Streich, Vallie.Morar</td>
+	</tr>
+</table>
+
+### Companies
+
+<table>
+	<tr>
+		<th>Key</th>
+		<th>Examples</th>
+	</tr>
+	<tr>
+		<td>domainName</td>
+		<td>breanne.biz, flo.ca, susie.io</td>
+	</tr>
+	<tr>
+		<td>domainWord</td>
+		<td>nayeli, ottilie, joany</td>
+	</tr>
+	<tr>
+		<td>ip</td>
+		<td>70.107.229.179, 40.84.165.142, 200.31.231.91</td>
+	</tr>
+	<tr>
+		<td>companyName</td>
+		<td>Erdman, Dietrich and Schamberger<br/>Kulas-Moore<br/>Dare-Pfeffer</td>
+	</tr>
+	<tr>
+		<td>companySuffix</td>
+		<td>and Sons, Group, LLC</td>
+	</tr>
+	<tr>
+		<td>catchPhrase</td>
+		<td>Persistent executive service-desk<br/>Sharable motivating standardization<br/>Face to face global knowledge base</td>
+	</tr>
+	<tr>
+		<td>bs</td>
+		<td>whiteboard synergistic web-readiness<br/>enhance web-enabled schemas<br/>reintermediate wireless systems</td>
+	</tr>
+</table>
+
+### Addresses
+
+<table>
+	<tr>
+		<th>Key</th>
+		<th>Examples</th>
+	</tr>
+	<tr>
+		<td>streetAddress</td>
+		<td>220 Marks Plain<br/>928 Hyatt Place<br/>46420 Cornell Row</td>
+	</tr>
+	<tr>
+		<td>secondaryAddress</td>
+		<td>Apt. 241, Suite 081, Apt. 883</td>
+	</tr>
+	<tr>
+		<td>city</td>
+		<td>Luciennetown, South Kiana, Gibsonstad</td>
+	</tr>
+	<tr>
+		<td>usState</td>
+		<td>New Hampshire, Oklahoma, Kentucky</td>
+	</tr>
+	<tr>
+		<td>brState</td>
+		<td>Ceará, Distrito Federal, Pernambuco</td>
+	</tr>
+	<tr>
+		<td>ukCounty</td>
+		<td>Surrey, Derbyshire, West Midlands</td>
+	</tr>
+	<tr>
+		<td>ukCountry</td>
+		<td>Scotland, England, Wales</td>
+	</tr>
+	<tr>
+		<td>zipCode</td>
+		<td>39368-1361, 35290, 62938-6427</td>
+	</tr>
+	<tr>
+		<td>zipCodeFormat(0)</td>
+		<td>10812, 37427, 17078</td>
+	</tr>
+	<tr>
+		<td>zipCodeFormat(1)</td>
+		<td>49563-3194, 72511-9477, 40840-7183</td>
+	</tr>
+	<tr>
+		<td>latitude</td>
+		<td>-56.8358, 79.0189, 28.3439</td>
+	</tr>
+	<tr>
+		<td>longitude</td>
+		<td>14.0440, 137.2489, -108.3675</td>
+	</tr>
+</table>
+
+### Images
+
+Each of the image options can accept two parameters, width and height.
+
+```js
+grunt.config('ipsum.mytask', {
+	template : {
+		thumb : '{%= ipsum.placeKitten(400, 300) %}'
+	}
+});
+// Outputs
+{
+	"thumb": "http://placekitten.com/400/300"
+}
+```
+
+If an array is used, a number will be chosen within that range.
+
+```js
+grunt.config('ipsum.mytask', {
+	template : {
+		thumb : '{%= ipsum.placeKitten([10, 40], [500, 600]) %}'
+	}
+});
+// Outputs
+{
+	"thumb": "http://placekitten.com/23/574"
+}
+```
+
+The range defaults to `[100, 500]`.
+
+```js
+grunt.config('ipsum.mytask', {
+	template : {
+		thumb : '{%= ipsum.placeKitten %}'
+	}
+});
+// Outputs
+{
+	"thumb": "http://placekitten.com/246/437"
+}
+```
+
+<table>
+	<tr>
+		<th>Key</th>
+		<th>Examples</th>
+	</tr>
+	<tr>
+		<td>niceNice</td>
+		<td><a href="http://nicenicejpg.com/160/90" target="_blank">http://nicenicejpg.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>niceNiceMustang</td>
+		<td><a href="http://nicenicejpg.com/5.0/160/90" target="_blank">http://nicenicejpg.com/5.0/160/90</a></td>
+	</tr>
+	<tr>
+		<td>fillMurray</td>
+		<td><a href="http://fillmurray.com/160/90" target="_blank">http://fillmurray.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>fillMurrayBw</td>
+		<td><a href="http://fillmurray.com/g/160/90" target="_blank">http://fillmurray.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeCage</td>
+		<td><a href="http://placecage.com/160/90" target="_blank">http://placecage.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeCageBw</td>
+		<td><a href="http://placecage.com/g/160/90" target="_blank">http://placecage.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeCageCrazy</td>
+		<td><a href="http://placecage.com/c/160/90" target="_blank">http://placecage.com/c/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeBear</td>
+		<td><a href="http://placebear.com/160/90" target="_blank">http://placebear.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeBearBw</td>
+		<td><a href="http://placebear.com/g/160/90" target="_blank">http://placebear.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeDog</td>
+		<td><a href="http://placedog.com/160/90" target="_blank">http://placedog.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeDogBw</td>
+		<td><a href="http://placedog.com/g/160/90" target="_blank">http://placedog.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeKitten</td>
+		<td><a href="http://placekitten.com/160/90" target="_blank">http://placekitten.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeKittenBw</td>
+		<td><a href="http://placekitten.com/g/160/90" target="_blank">http://placekitten.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>placeZombie</td>
+		<td><a href="http://placezombies.com/160x90" target="_blank">http://placezombies.com/160x90</a></td>
+	</tr>
+	<tr>
+		<td>placeZombieBw</td>
+		<td><a href="http://placezombies.com/g/160x90" target="_blank">http://placezombies.com/g/160x90</a></td>
+	</tr>
+	<tr>
+		<td>placeSheen</td>
+		<td><a href="http://placesheen.com/160/90" target="_blank">http://placesheen.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>baconMockup</td>
+		<td><a href="http://baconmockup.com/160/90" target="_blank">http://baconmockup.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>loremPixel</td>
+		<td><a href="http://lorempixel.com/160/90" target="_blank">http://lorempixel.com/160/90</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelAbstract</td>
+		<td><a href="http://lorempixel.com/160/90/abstract" target="_blank">http://lorempixel.com/160/90/abstract</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelAnimals</td>
+		<td><a href="http://lorempixel.com/160/90/animals" target="_blank">http://lorempixel.com/160/90/animals</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelBusiness</td>
+		<td><a href="http://lorempixel.com/160/90/business" target="_blank">http://lorempixel.com/160/90/business</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelCats</td>
+		<td><a href="http://lorempixel.com/160/90/cats" target="_blank">http://lorempixel.com/160/90/cats</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelCity</td>
+		<td><a href="http://lorempixel.com/160/90/city" target="_blank">http://lorempixel.com/160/90/city</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelFood</td>
+		<td><a href="http://lorempixel.com/160/90/food" target="_blank">http://lorempixel.com/160/90/food</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelNightlife</td>
+		<td><a href="http://lorempixel.com/160/90/nightlife" target="_blank">http://lorempixel.com/160/90/nightlife</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelFashion</td>
+		<td><a href="http://lorempixel.com/160/90/fashion" target="_blank">http://lorempixel.com/160/90/fashion</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelPeople</td>
+		<td><a href="http://lorempixel.com/160/90/people" target="_blank">http://lorempixel.com/160/90/people</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelNature</td>
+		<td><a href="http://lorempixel.com/160/90/nature" target="_blank">http://lorempixel.com/160/90/nature</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelSports</td>
+		<td><a href="http://lorempixel.com/160/90/sports" target="_blank">http://lorempixel.com/160/90/sports</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelTechnics</td>
+		<td><a href="http://lorempixel.com/160/90/technics" target="_blank">http://lorempixel.com/160/90/technics</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelTransport</td>
+		<td><a href="http://lorempixel.com/160/90/transport" target="_blank">http://lorempixel.com/160/90/transport</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelBw</td>
+		<td><a href="http://lorempixel.com/g/160/90" target="_blank">http://lorempixel.com/g/160/90</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelAbstractBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/abstract" target="_blank">http://lorempixel.com/g/160/90/abstract</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelAnimalsBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/animals" target="_blank">http://lorempixel.com/g/160/90/animals</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelBusinessBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/business" target="_blank">http://lorempixel.com/g/160/90/business</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelCatsBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/cats" target="_blank">http://lorempixel.com/g/160/90/cats</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelCityBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/city" target="_blank">http://lorempixel.com/g/160/90/city</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelFoodBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/food" target="_blank">http://lorempixel.com/g/160/90/food</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelNightlifeBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/nightlife" target="_blank">http://lorempixel.com/g/160/90/nightlife</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelFashionBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/fashion" target="_blank">http://lorempixel.com/g/160/90/fashion</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelPeopleBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/people" target="_blank">http://lorempixel.com/g/160/90/people</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelNatureBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/nature" target="_blank">http://lorempixel.com/g/160/90/nature</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelSportsBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/sports" target="_blank">http://lorempixel.com/g/160/90/sports</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelTechnicsBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/technics" target="_blank">http://lorempixel.com/g/160/90/technics</a></td>
+	</tr>
+	<tr>
+		<td>loremPixelTransportBw</td>
+		<td><a href="http://lorempixel.com/g/160/90/transport" target="_blank">http://lorempixel.com/g/160/90/transport</a></td>
+	</tr>
+</table>
