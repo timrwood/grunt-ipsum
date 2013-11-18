@@ -12,32 +12,85 @@ exports.faker = {
 	literal_properties : function (test) {
 		var actual = grunt.file.readJSON('test/actual/faker.json');
 
-		test.ok(actual.name, 'Should export a value from Faker.js');
-		test.ok(actual.firstName, 'Should export a value from Faker.js');
-		test.ok(actual.lastName, 'Should export a value from Faker.js');
-		test.ok(actual.zipCode, 'Should export a value from Faker.js');
-		test.ok(actual.zipCodeFormat, 'Should export a value from Faker.js');
-		test.ok(actual.city, 'Should export a value from Faker.js');
-		test.ok(actual.streetName, 'Should export a value from Faker.js');
-		test.ok(actual.streetAddress, 'Should export a value from Faker.js');
-		test.ok(actual.secondaryAddress, 'Should export a value from Faker.js');
-		test.ok(actual.brState, 'Should export a value from Faker.js');
-		test.ok(actual.ukCounty, 'Should export a value from Faker.js');
-		test.ok(actual.ukCountry, 'Should export a value from Faker.js');
-		test.ok(actual.usState, 'Should export a value from Faker.js');
-		test.ok(actual.latitude, 'Should export a value from Faker.js');
-		test.ok(actual.longitude, 'Should export a value from Faker.js');
-		test.ok(actual.phoneNumber, 'Should export a value from Faker.js');
-		test.ok(actual.phoneNumberFormat, 'Should export a value from Faker.js');
-		test.ok(actual.email, 'Should export a value from Faker.js');
-		test.ok(actual.userName, 'Should export a value from Faker.js');
-		test.ok(actual.domainName, 'Should export a value from Faker.js');
-		test.ok(actual.domainWord, 'Should export a value from Faker.js');
-		test.ok(actual.ip, 'Should export a value from Faker.js');
-		test.ok(actual.companyName, 'Should export a value from Faker.js');
-		test.ok(actual.companySuffix, 'Should export a value from Faker.js');
-		test.ok(actual.catchPhrase, 'Should export a value from Faker.js');
-		test.ok(actual.bs, 'Should export a value from Faker.js');
+		var keys = [
+			'name',
+			'firstName',
+			'lastName',
+			'zipCode',
+			'zipCodeFormat',
+			'city',
+			'streetName',
+			'streetAddress',
+			'secondaryAddress',
+			'brState',
+			'ukCounty',
+			'ukCountry',
+			'usState',
+			'latitude',
+			'longitude',
+			'phoneNumber',
+			'phoneNumberFormat',
+			'email',
+			'userName',
+			'domainName',
+			'domainWord',
+			'ip',
+			'companyName',
+			'companySuffix',
+			'catchPhrase',
+			'bs',
+			'niceNice',
+			'niceNiceMustang',
+			'fillMurray',
+			'fillMurrayBw',
+			'placeCage',
+			'placeCageBw',
+			'placeCageCrazy',
+			'placeBear',
+			'placeBearBw',
+			'placeDog',
+			'placeDogBw',
+			'placeKitten',
+			'placeKittenBw',
+			'placeZombie',
+			'placeZombieBw',
+			'placeSheen',
+			'baconMockup',
+			'loremPixel',
+			'loremPixelAbstract',
+			'loremPixelAnimals',
+			'loremPixelBusiness',
+			'loremPixelCats',
+			'loremPixelCity',
+			'loremPixelFood',
+			'loremPixelNightlife',
+			'loremPixelFashion',
+			'loremPixelPeople',
+			'loremPixelNature',
+			'loremPixelSports',
+			'loremPixelTechnics',
+			'loremPixelTransport',
+			'loremPixelBw',
+			'loremPixelAbstractBw',
+			'loremPixelAnimalsBw',
+			'loremPixelBusinessBw',
+			'loremPixelCatsBw',
+			'loremPixelCityBw',
+			'loremPixelFoodBw',
+			'loremPixelNightlifeBw',
+			'loremPixelFashionBw',
+			'loremPixelPeopleBw',
+			'loremPixelNatureBw',
+			'loremPixelSportsBw',
+			'loremPixelTechnicsBw',
+			'loremPixelTransportBw',
+		];
+
+		test.expect(keys.length);
+
+		keys.forEach(function (key) {
+			test.ok(actual[key], 'Should export a value for ' + key);
+		});
 
 		test.done();
 	},
