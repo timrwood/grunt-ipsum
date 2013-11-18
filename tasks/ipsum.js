@@ -15,7 +15,7 @@ var data = require('../lib/data'),
 module.exports = function (grunt) {
 	grunt.registerMultiTask('ipsum', 'Generate fake data.', function () {
 		this.files.forEach(function (file) {
-			var repeated = repeater(file.template, file.repeat, file.repetitions);
+			var repeated = repeater(file.template, file.repeat, file.repetitions, file.availibility);
 			var replaced = replacer(repeated, { ipsum : data });
 			grunt.file.write(file.dest, JSON.stringify(replaced, null, '\t'));
 		});

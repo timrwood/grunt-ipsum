@@ -1,4 +1,5 @@
-var repeater = require('../../lib/repeater');
+var repeater = require('../../lib/repeater'),
+	grunt = require('grunt');
 
 exports.replacer = {
 	setUp: function (done) {
@@ -80,6 +81,19 @@ exports.replacer = {
 		test.equal(actual.e, 'e', 'Should have a 1 property when Math.random() == 0.75.');
 
 		Math.random = oldRandom;
+
+		test.done();
+	},
+	create_file : function (test) {
+		test.ok(grunt.file.exists('test/actual/availibility.json'), 'Should create files.');
+
+		test.done();
+	},
+	availibility_within_grunt_task : function (test) {
+		var actual = grunt.file.readJSON('test/actual/availibility.json');
+
+		test.equal(actual.a, 'alpha', 'Should have a property at 100% availibility.');
+		test.equal(actual.b, null, 'Should not have a property at 0% availibility.');
 
 		test.done();
 	},
