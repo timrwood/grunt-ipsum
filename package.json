@@ -1,6 +1,6 @@
 {
   "name": "grunt-ipsum",
-  "description": "Generate fake data.",
+  "description": "Generate fake data, lorem ipsum, and placeholder images as JSON.",
   "version": "0.1.0",
   "homepage": "https://github.com/timrwood/grunt-ipsum",
   "author": {
@@ -37,7 +37,11 @@
     "grunt": "~0.4.1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "faker",
+    "lorem",
+    "ipsum",
+    "placeholder"
   ],
   "dependencies": {
     "Faker": "~0.5.11"
