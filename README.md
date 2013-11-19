@@ -38,6 +38,8 @@ grunt.config('ipsum.mytask', {
 
 The schema of fake data to generate.
 
+For all available keys, see [the docs below](#template-keys-and-examples).
+
 ```js
 grunt.config('ipsum.mytask', {
 	template : {
